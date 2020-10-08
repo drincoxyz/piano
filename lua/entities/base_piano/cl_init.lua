@@ -262,7 +262,7 @@ function ENT:OnNoteHeld(note, oct, vel)
 	if self.KeyBoneAng then
 		local bonename = self:TranslateKeyBoneName(note, oct)
 		local bone     = self:LookupBone(bonename)
-		self:ManipulateBoneAngles(bone, self.KeyBoneAng --[[* (vel / 100)]])
+		if bone then self:ManipulateBoneAngles(bone, self.KeyBoneAng --[[* (vel / 100)]]) end
 	end
 end
 
